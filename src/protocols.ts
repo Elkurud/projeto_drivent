@@ -1,3 +1,4 @@
+import { Ticket } from '@prisma/client'
 
 export type ViaCEPAddress = {
   logradouro: string;
@@ -54,3 +55,4 @@ export type AddressEnrollment = {
   error?: string;
 };
 
+export type CreateTicketParams = Omit<Ticket, 'id' | 'createdAt' | 'updatedAt'>;
