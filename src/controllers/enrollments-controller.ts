@@ -2,7 +2,6 @@ import { Response } from 'express';
 import httpStatus from 'http-status';
 import { AuthenticatedRequest } from '@/middlewares';
 import enrollmentsService from '@/services/enrollments-service';
-import { ParsedQs } from 'qs';
 
 export async function getEnrollmentByUser(req: AuthenticatedRequest, res: Response) {
   const { userId } = req;
@@ -30,8 +29,7 @@ export async function postCreateOrUpdateEnrollment(req: AuthenticatedRequest, re
 }
 
 export async function getAddressFromCEP(req: AuthenticatedRequest, res: Response) {
-
-  const cep: string  = req.query.cep as string;
+  const { cep } = req.query as Record<string, string>;
 
   try {
     const address = await enrollmentsService.getAddressFromCEP(cep);
