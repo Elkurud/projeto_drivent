@@ -8,7 +8,6 @@ import { AddressModel } from '@/protocols';
 
 async function getAddressFromCEP(cep: string): Promise<AddressModel> {
 
-  // FIXME: está com CEP fixo!
   const result = await request.get(`${process.env.VIA_CEP_API}/${cep}/json/`);
   console.log(result)
 
@@ -29,7 +28,6 @@ async function getAddressFromCEP(cep: string): Promise<AddressModel> {
 
   return address;
 
-  // FIXME: não estamos interessados em todos os campos
   return result.data;
 }
 
