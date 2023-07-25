@@ -44,19 +44,3 @@ export async function createTicketTypeWithHotel() {
     },
   });
 }
-
-export function getTicketTypeReturn() {
-  const expected: TicketType[] = [
-    {
-      id: 1,
-      name: 'Presencial',
-      price: 3000,
-      isRemote: false,
-      includesHotel: true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  ];
-
-  return expected;
-}
