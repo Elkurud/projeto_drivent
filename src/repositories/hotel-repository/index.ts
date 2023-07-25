@@ -21,5 +21,3 @@ const hotelRepository = {
 };
 
 export default hotelRepository;
-
-export default hotelRepository;
